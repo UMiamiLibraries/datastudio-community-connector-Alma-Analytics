@@ -16,3 +16,6 @@ yourself.
 After following these steps, you will need the  following info from your Alma exlibrisgroup Admin
 1. DB table path 
 2. API_KEY
+
+### schema creator
+The code generates schema automatically for each table, based on the XML's schema.
