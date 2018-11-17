@@ -19,3 +19,7 @@ After following these steps, you will need the  following info from your Alma ex
 
 ### schema creator
 The code generates schema automatically for each table, based on the XML's schema.
+
+
+### Credits
+The Google Data Studio connector was created by David and Kineret Ben-Knaan.
