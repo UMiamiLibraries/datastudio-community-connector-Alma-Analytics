@@ -58,7 +58,7 @@ connector.getSchemaFromXLM = function(xml){
     var nameToValue = {};
     
     element.getAttributes().forEach(function(e) {
-      this[e.getName()] = e.getValue().replace(/\(/g, '').replace(/\)/g, '');
+      this[e.getName()] = e.getValue().replace(/\(/g, '').replace(/\)/g, '').replace(/\+/g, '');
     }, nameToValue);
     
     var isValANumber_ = parseInt(nameToValue['columnHeading']);
