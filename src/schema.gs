@@ -29,7 +29,7 @@ connector.getSchema = function(request) {
   }
  
   var document = XmlService.parse(xml);
-  var ret = connector.getSchemaFromXLM(document).schema;
+  var ret = connector.getSchemaFromXML(document).schema;
   return ret;
 };
 
@@ -41,11 +41,11 @@ connector.getSchema = function(request) {
  * @param {xml} the xml from the API
  * @returns {schema : scm_, colmToName :colmToName}; 'schema' is the schema & 'colmToName' is a table between the colm number and the colm name.
  */
-connector.getSchemaFromXLM = function(xml){
+connector.getSchemaFromXML = function(xml){
   var SchemaToReturn = [];
   var colmToName = {};
   
-  var schemFromCache = cacheManager.getCachedData('getSchemaFromXLM');
+  var schemFromCache = cacheManager.getCachedData('getSchemaFromXML');
   if(schemFromCache !== null){
     return schemFromCache;
   }
