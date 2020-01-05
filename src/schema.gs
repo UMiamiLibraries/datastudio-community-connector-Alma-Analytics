@@ -93,6 +93,6 @@ connector.getSchemaFromXML = function(xml){
   }
   var scm_ = { schema : SchemaToReturn};
   var objToRet = {schema : scm_, colmToName :colmToName};
-  cacheManager.setCachedData('getSchemaFromXLM', objToRet);
+  cacheManager.setCachedData('getSchemaFromXML', objToRet);
   return objToRet;
 }
