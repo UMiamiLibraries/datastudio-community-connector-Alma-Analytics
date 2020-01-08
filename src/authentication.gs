@@ -123,6 +123,7 @@ connector.checkForValidKey = function(key)
   var res_ = UrlFetchApp.fetch( url.join(''),{   muteHttpExceptions: true  });
   var responseBody = res_.getContentText();
   if(responseBody.indexOf('Invalid API Key') != -1) return false;
+  if(responseBody.indexOf('UNAUTHORIZED') != -1) return false;
   return true; 
 }
   

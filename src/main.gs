@@ -105,7 +105,7 @@ connector.getData = function(request) {
   }
    
   var document = XmlService.parse(xml);
-  var fs_ = connector.getSchemaFromXLM(document);
+  var fs_ = connector.getSchemaFromXML(document);
   var fixedSchema =fs_.schema.schema;
   var colmToName = fs_.colmToName;
   var root = document.getRootElement();

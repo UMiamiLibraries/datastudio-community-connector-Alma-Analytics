@@ -29,7 +29,7 @@ connector.getSchema = function(request) {
   }
  
   var document = XmlService.parse(xml);
-  var ret = connector.getSchemaFromXLM(document).schema;
+  var ret = connector.getSchemaFromXML(document).schema;
   return ret;
 };
 
@@ -41,11 +41,11 @@ connector.getSchema = function(request) {
  * @param {xml} the xml from the API
  * @returns {schema : scm_, colmToName :colmToName}; 'schema' is the schema & 'colmToName' is a table between the colm number and the colm name.
  */
-connector.getSchemaFromXLM = function(xml){
+connector.getSchemaFromXML = function(xml){
   var SchemaToReturn = [];
   var colmToName = {};
   
-  var schemFromCache = cacheManager.getCachedData('getSchemaFromXLM');
+  var schemFromCache = cacheManager.getCachedData('getSchemaFromXML');
   if(schemFromCache !== null){
     return schemFromCache;
   }
@@ -58,7 +58,7 @@ connector.getSchemaFromXLM = function(xml){
     var nameToValue = {};
     
     element.getAttributes().forEach(function(e) {
-      this[e.getName()] = e.getValue().replace(/\(/g, '').replace(/\)/g, '');
+      this[e.getName()] = e.getValue().replace(/\(/g, '').replace(/\)/g, '').replace(/\+/g, '');
     }, nameToValue);
     
     var isValANumber_ = parseInt(nameToValue['columnHeading']);
@@ -93,6 +93,6 @@ connector.getSchemaFromXLM = function(xml){
   }
   var scm_ = { schema : SchemaToReturn};
   var objToRet = {schema : scm_, colmToName :colmToName};
-  cacheManager.setCachedData('getSchemaFromXLM', objToRet);
+  cacheManager.setCachedData('getSchemaFromXML', objToRet);
   return objToRet;
 }
