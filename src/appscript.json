@@ -1,8 +1,8 @@
 {
   "dataStudio": {
     "name": "Alma Analytics API",
-    "company": "Ben Knaan",
-    "logoUrl": "https://image.ibb.co/kpVNep/benknaan.png",
+    "company": "University of Miami Libraries",
+    "logoUrl": "https://www.library.miami.edu/assets/common-images/um-logo2.png",
     "addonUrl": "https://developers.google.com/datastudio/connector/getstarted",
     "supportUrl": "https://developers.google.com/datastudio/connector/faq",
     "description": "This connector uses Alma Analytics API to retrieve reports."
